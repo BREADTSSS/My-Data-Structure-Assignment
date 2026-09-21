@@ -1,16 +1,26 @@
 #include <stdio.h>
 #include <string.h>
+
+struct kodeBRT {
+    char kode[10];
+};
+
 typedef struct lagu
 {
-    char judul_lagu[15];
-    char nama_penyanyi;
-    int harga;
+    char judul[15];
+    char penyanyi[25];
+    int tahun;
+    int track;
+    kodeBRT album;
 } Lagu;
+
 void main()
 {
-    Lagu song;
+    Lagu song[3];
     printf("Judul lagu: ");
     fgets(song.judul_lagu, sizeof(song.judul_lagu), stdin);
     song.judul_lagu[strcspn(song.judul_lagu, "\n")] = 0;
-    printf("Hello World");
+    printf("Nama penyanyi: ");
+    fgets(song.penyanyi, sizeof(song.judul_lagu), stdin);
+    song.judul_lagu[strcspn(song.judul_lagu, "\n")] = 0;
 }
